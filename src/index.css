@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====== Fonte ====== */
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap");
+
+/* ====== Variáveis Globais ====== */
+:root {
+  --qblue: 36, 186, 255; /* Azul ciano elegante */
+  --page-bg: #000;
+  --text-color: #f8f8f8;
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ====== Base ====== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  color: var(--text-color);
+  background-color: var(--page-bg) !important;
+  font-family: "Rajdhani", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+canvas {
+  background-color: #000 !important;
+  display: block;
+}
+
+/* ====== Cores Utilitárias ====== */
+.text-qblue {
+  color: rgb(var(--qblue));
+}
+.text-qblue\/70 {
+  color: rgba(var(--qblue), 0.7);
+}
+.text-qblue\/80 {
+  color: rgba(var(--qblue), 0.8);
+}
+.bg-qblue\/10 {
+  background-color: rgba(var(--qblue), 0.1);
+}
+
+/* ====== Fundos Dinâmicos ====== */
+.bg-page {
+  background: radial-gradient(
+      1000px 600px at 20% -10%,
+      rgba(var(--qblue), 0.04),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 500px at 80% 0%,
+      rgba(var(--qblue), 0.04),
+      transparent 55%
+    ),
+    #000;
+}
+
+.bg-hero {
+  background: radial-gradient(
+      1000px 600px at 50% 10%,
+      rgba(var(--qblue), 0.05),
+      transparent 70%
+    ),
+    #000;
+}
+
+/* ====== Tipografia ====== */
+.font-display {
+  font-family: "Rajdhani", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.06em;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* ====== Navegação ====== */
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 150ms ease;
+}
+.nav-link:hover {
+  color: rgb(255, 255, 255);
+}
+
+/* ====== Botões ====== */
+.btn-primary {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  border: 1px solid rgba(var(--qblue), 0.6);
+  color: white;
+  background: rgba(var(--qblue), 0.12);
+  border-radius: 6px;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  transition: 200ms ease;
+}
+.btn-primary:hover {
+  background: rgba(var(--qblue), 0.18);
+  border-color: rgba(var(--qblue), 0.8);
+  box-shadow: 0 0 18px rgba(var(--qblue), 0.2);
+}
+
+/* ====== Links ====== */
+.link {
+  color: rgba(var(--qblue), 0.9);
+  border-bottom: 1px dashed rgba(var(--qblue), 0.4);
+  padding-bottom: 2px;
+  transition: 150ms ease;
+}
+.link:hover {
+  color: rgb(var(--qblue));
+  border-bottom-color: rgb(var(--qblue));
+}
+
+/* ====== Seções ====== */
+.sec {
+  padding: 64px 0;
+}
+@media (min-width: 768px) {
+  .sec {
+    padding: 96px 0;
+  }
+}
+
+/* ====== Cartões e Blocos ====== */
+.card {
+  border: 1px solid var(--card-border);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 10px;
+  padding: 18px 16px;
+  transition: 200ms ease;
+}
+.card:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(var(--qblue), 0.07),
+    rgba(255, 255, 255, 0.02)
+  );
+  transform: translateY(-3px);
+}
+
+/* ====== Pílulas ====== */
+.pill {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: center;
+  transition: 200ms ease;
+}
+.pill:hover {
+  background: rgba(var(--qblue), 0.08);
+}
+
+/* ====== Listas ====== */
+.list {
+  margin-top: 6px;
+  display: grid;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+.list li {
+  padding-left: 14px;
+  position: relative;
+}
+.list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(var(--qblue), 0.9);
+  box-shadow: 0 0 8px rgba(var(--qblue), 0.5);
+}
+
+/* ====== Métricas ====== */
+.metric-box {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  padding: 18px 12px;
+  transition: 150ms ease;
+}
+.metric-box:hover {
+  background: rgba(var(--qblue), 0.06);
+  box-shadow: 0 0 10px rgba(var(--qblue), 0.15);
+}
+
+/* ====== Caveiras ====== */
+.skull-auto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90vmin;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+/* ====== Fogo (efeito líquido) ====== */
+.skull-fire {
+  background-color: transparent;
+  mix-blend-mode: lighten;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* ====== Efeito líquido de “tinta” ====== */
+@keyframes rise {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+}
+.drop {
+  animation: rise 3.2s ease-in-out infinite;
+  background: rgba(var(--qblue), 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(var(--qblue), 0.4);
+}
+
+/* ====== Utilitários ====== */
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(var(--qblue), 0.3);
+}
+.glow-text {
+  text-shadow: 0 0 8px rgba(var(--qblue), 0.5);
+}
+.center-abs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ====== Breakpoints Customizados ====== */
+@media (min-width: 320px) { .text-xs-device { font-size: 0.75rem; } }
+@media (min-width: 375px) { .text-sm-device { font-size: 0.8rem; } }
+@media (min-width: 475px) { .text-md-device { font-size: 0.9rem; } }
+@media (min-width: 640px) { .text-lg-device { font-size: 1rem; } }
+@media (min-width: 768px) { .text-xl-device { font-size: 1.1rem; } }
+@media (min-width: 1024px) { .text-2xl-device { font-size: 1.25rem; } }
+@media (min-width: 1280px) { .text-3xl-device { font-size: 1.5rem; } }
+@media (min-width: 1536px) { .text-4xl-device { font-size: 1.8rem; } }
+@media (min-width: 1920px) { .text-5xl-device { font-size: 2.2rem; } }
+@media (min-width: 2560px) { .text-6xl-device { font-size: 2.8rem; } }
+@media (min-width: 3440px) { .text-7xl-device { font-size: 3.2rem; } }
+/* ====== Máscara da caveira de fogo corrigida ====== */
+.skull-fire {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+
+  /* Máscara dinâmica controlada por variáveis CSS */
+  mask-image: radial-gradient(
+    circle at var(--x, 50vw) var(--y, 50vh),
+    black 0%,
+    black 130px,
+    transparent 170px
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at var(--x, 50vw) var(--y, 50vh),
+    black 0%,
+    black 130px,
+    transparent 170px
+  );
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  transition: mask-image 80ms linear, -webkit-mask-image 80ms linear;
+}
+
+/* 🔥 Corrige interferência do blend */
+.skull-auto {
+  mix-blend-mode: normal !important;
+}
